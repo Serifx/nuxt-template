@@ -1,8 +1,10 @@
-# eb-together
+# Nuxt starter template
 
-> 异宝微商城
+> Based on [nuxt-starter-template](https://github.com/nuxt-community/starter-template)
 
 ## Build Setup
+
+Clone this repo and then  
 
 ``` bash
 # install dependencies
@@ -17,6 +19,9 @@ $ npm start
 
 # generate static project
 $ npm run generate
+
+# start a local server
+$ npm run server
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).

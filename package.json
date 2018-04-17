@@ -1,7 +1,7 @@
 {
   "name": "nuxt-template",
   "version": "1.0.0",
-  "description": "Nuxt starter 模板，基于 nuxt-community/starter-template 修改优化",
+  "description": "Nuxt starter template，based on nuxt-community/starter-template",
   "author": "Serifx <Serifx@outlook.com>",
   "private": true,
   "scripts": {
