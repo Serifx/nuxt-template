@@ -1,0 +1,46 @@
+{
+  "name": "nuxt-template",
+  "version": "1.0.0",
+  "description": "Nuxt starter 模板，基于 nuxt-community/starter-template 修改优化",
+  "author": "Serifx <Serifx@outlook.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "server": "cross-env NODE_ENV=production node server.js",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Serif-x/nuxt-template.git"
+  },
+  "keywords": [
+    "vue",
+    "nuxt",
+    "starter",
+    "template"
+  ],
+  "bugs": {
+    "url": "https://github.com/Serif-x/nuxt-template/issues"
+  },
+  "homepage": "https://github.com/Serif-x/nuxt-template#readme",
+  "dependencies": {
+    "nuxt": "^1.4.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^7.0.1",
+    "webpack": "^3.11.0"
+  }
+}
