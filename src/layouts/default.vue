@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <nuxt/>
-  </div>
+  <nuxt/>
 </template>
-
-<style></style>
+<style lang="scss">
+  .app-root {
+    height: 100%;
+  }
+</style>

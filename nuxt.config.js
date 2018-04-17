@@ -10,11 +10,11 @@ module.exports = {
   ],
 
   head: {
-    title: '[页面标题]',
+    title: '[TITLE]',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '[页面描述]' },
+      { hid: 'description', name: 'description', content: '[DESCRIPTION]' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' }
     ],
     link: [
