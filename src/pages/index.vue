@@ -2,6 +2,7 @@
   <div class="container">
     <AppLogo/>
     <h1>hello world!</h1>
+    <p><router-link to="item/details">Go to details</router-link></p>
   </div>
 </template>
 
@@ -20,12 +21,11 @@
   };
 </script>
 
-<style scoped>
+<style>
   html,
   body {
     height: 100%;
   }
-  
   .app-root {
     height: 100%;
     display: flex;
@@ -34,7 +34,8 @@
     align-items: center;
     text-align: center;
   }
-  
+</style>
+<style scoped>
   h1 {
     margin: 30px auto;
   }

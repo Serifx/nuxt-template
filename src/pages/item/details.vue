@@ -1,6 +1,7 @@
 <template>
   <div class="details">
-    Details
+    <h1>Now you see me</h1>
+    <p><router-link to="../" replace>Go back</router-link></p>
   </div>
 </template>
 
@@ -13,7 +14,7 @@
 </script>
 <style scoped>
   .details {
-    font-size: 12px;
+    font-size: 26px;
     color: #f00;
   }
 </style>
