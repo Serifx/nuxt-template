@@ -1,0 +1,51 @@
+@import "./variables";
+@import "./mixins";
+
+// Text
+.text-default { color: $color-black !important; }
+.text-gray { color: $color-gray !important; }
+.text-warning { color: $color-warning !important; }
+
+// Box layout
+.box-center {
+  @include flex-center()
+}
+.box-center-vertical {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.box-center-horizontal {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+// Line and border
+.with-line-top {
+  @include with-line-top();
+}
+.with-line-bottom {
+  @include with-line-bottom();
+}
+.with-no-border {
+  @include with-no-border();
+}
+.with-no-line-top {
+  @include with-no-line-top();
+}
+.with-no-line-bottom {
+  @include with-no-line-bottom();
+}
+
+// Gap
+.block-gap {
+  @include block-gap();
+}

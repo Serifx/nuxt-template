@@ -1,0 +1,163 @@
+// Mixins & Functions
+// ====================================================
+
+@import "./variables";
+
+/* region Functions */
+/* ========================================================================== */
+// Convert 'px'
+@function rpx($value, $baseSize: $baseFontSize) {
+  @return ($value / $baseSize) * 1px;
+}
+
+/* endregion */
+
+/* region Mixins */
+/* ========================================================================== */
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin text-ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin flex-center($vertical: false) {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  @if ($vertical) {
+    flex-direction: column;
+  }
+}
+
+@mixin borderBox () {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin expandHotSpot ($scale: 2) {
+  // Hot spot for expanding tap area
+  position: relative;
+  overflow: visible;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale($scale);
+  }
+}
+
+@mixin with-line-top ($distance: 0, $color: #E6E6E6) {
+  position: relative;
+  
+  &:before {
+    content: '' !important;
+    position: absolute;
+    top: 0;
+    left: $distance;
+    right: $distance;
+    z-index: 1;
+    height: 0;
+    border-top: 1px solid $color;
+    transform: scaleY(.5);
+  }
+}
+
+@mixin with-line-bottom ($distance: 0, $color: #E6E6E6) {
+  position: relative;
+  
+  &:after {
+    content: '' !important;
+    position: absolute;
+    bottom: 0;
+    left: $distance;
+    right: $distance;
+    z-index: 1;
+    height: 0;
+    border-top: 1px solid $color;
+    transform: scaleY(.5);
+  }
+}
+
+@mixin with-border ($color: #F2F1F5, $width: 1px, $radius: 0) {
+  position: relative;
+  
+  &:before {
+    content: '' !important;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    border: $width solid $color;
+    border-radius: $radius;
+    transform: scale(0.5);
+    transform-origin: left top;
+  }
+}
+
+@mixin with-no-line-top() {
+  &:before {
+    content: none !important;
+  }
+}
+
+@mixin with-no-line-bottom() {
+  &:after {
+    content: none !important;
+  }
+}
+
+@mixin with-no-border() {
+  &:before,
+  &:after {
+    content: none !important;
+  }
+}
+
+@mixin block-gap ($height: 20px, $bgColor: #f7f7f7) {
+  display: block;
+  width: 100%;
+  height: $height;
+  clear: both;
+  background-color: $bgColor;
+}
+
+@mixin square-box($width, $height: $width) {
+  width: $width;
+  height: $height;
+  line-height: $height;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* endregion */
