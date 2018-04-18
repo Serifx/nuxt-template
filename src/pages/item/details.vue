@@ -1,6 +1,6 @@
 <template>
   <div class="details">
-    详情页
+    Details
   </div>
 </template>
 
@@ -11,7 +11,7 @@
     }
   };
 </script>
-<style>
+<style scoped>
   .details {
     font-size: 12px;
     color: #f00;

@@ -1,6 +1,15 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
 const dirPublic = '/public/'
 const dirJS = 'js'
 const dirStyle = 'css'
+
+const prod = process.env.NODE_ENV === 'production'
+
+const extractCSS = new ExtractTextPlugin({
+  filename: dirStyle + '/[name].[contenthash].css',
+  allChunks: true
+});
 
 module.exports = {
   srcDir: './src',
@@ -32,7 +41,7 @@ module.exports = {
       app: dirJS + '/app.[chunkhash].js',
       manifest: dirJS + '/manifest.[hash].js',
       chunk: dirJS + '/[name].[chunkhash].js',
-      css: dirStyle + '/common.[contenthash].css'
+      css: dirStyle + '/[name].[contenthash].css'
     },
 
     extractCSS: true,
@@ -42,8 +51,29 @@ module.exports = {
 
     loaders: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          extractCSS: true,
+          loaders: {
+            css: ExtractTextPlugin.extract({
+              use: 'css-loader',
+              fallback: 'vue-style-loader' // <- 这是vue-loader的依赖，所以如果使用npm3，则不需要显式安装
+            })
+          }
+        }
+      },
+      {
         test: /\.scss$/,
         loader: 'sass-loader',
+        options: {
+          outputStyle: 'expanded'
+        }
+      },
+      {
+        test: /\.css$/,
+        // 重要：使用 vue-style-loader 替代 style-loader
+        use: extractCSS.extract(['vue-style-loader', 'css-loader', 'sass-loader']),
         options: {
           outputStyle: 'expanded'
         }
@@ -66,7 +96,9 @@ module.exports = {
       }
     ],
 
-    plugins: [],
+    plugins: [
+      extractCSS
+    ],
 
     /*
     ** Run ESLint on save
@@ -107,5 +139,5 @@ module.exports = {
     }
   },
 
-  dev: (process.env.NODE_ENV !== 'production')
+  dev: !prod
 }

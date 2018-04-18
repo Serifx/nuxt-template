@@ -28,10 +28,10 @@
     "url": "https://github.com/Serif-x/nuxt-template/issues"
   },
   "homepage": "https://github.com/Serif-x/nuxt-template#readme",
+  "license": "MIT",
   "dependencies": {
     "nuxt": "^1.4.0"
   },
-  "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "cross-env": "^5.1.4",

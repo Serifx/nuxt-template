@@ -9,13 +9,18 @@
   import AppLogo from '~/components/AppLogo';
   
   export default {
+    head () {
+      return {
+        title: 'Nuxt'
+      };
+    },
     components: {
       AppLogo
     }
   };
 </script>
 
-<style>
+<style scoped>
   html,
   body {
     height: 100%;
