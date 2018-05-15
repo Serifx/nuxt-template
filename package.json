@@ -30,10 +30,16 @@
   "homepage": "https://github.com/Serif-x/nuxt-template#readme",
   "license": "MIT",
   "dependencies": {
-    "nuxt": "^1.4.0"
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "mint-ui": "^2.2.13",
+    "nuxt": "^1.4.0",
+    "qs": "^6.5.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.1.4",
     "cssnano": "^3.10.0",
     "cssnano-preset-advanced": "^4.0.0-rc.2",
@@ -48,6 +54,7 @@
     "postcss-viewport-units": "^0.1.4",
     "postcss-write-svg": "^3.0.1",
     "sass-loader": "^7.0.1",
+    "vconsole": "^3.2.0",
     "webpack": "^3.11.0"
   }
 }

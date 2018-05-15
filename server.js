@@ -3,7 +3,7 @@ const app = require('express')()
 const port = process.env.PORT || 3000
 
 // import nuxt config
-let config = require('./nuxt.config.js')
+const config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
 app.use(nuxt.render)
 
